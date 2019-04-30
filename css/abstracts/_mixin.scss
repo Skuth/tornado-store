@@ -1,0 +1,30 @@
+@mixin flex($var1, $var2) {
+	display: flex;
+	justify-content: $var1;
+	align-items: $var2;
+}
+
+@mixin transition($type, $time) {
+	-moz-transition: $type $time;
+	-webkit-transition: $type $time;
+	transition: $type $time;
+}
+
+@mixin gradient($cor1, $cor2) {
+	background: -moz-linear-gradient(top, $cor1 0%, $cor2 100%);
+	background: -webkit-linear-gradient(top, $cor1 0%,$cor2 100%);
+	background: linear-gradient(to bottom, $cor1 0%,$cor2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$cor1', endColorstr='$cor2',GradientType=0 );
+}
+
+@mixin filter($filter) {
+	-moz-filter: $filter;
+	-webkit-filter: $filter;
+	filter: $filter;
+}
+
+@mixin select() {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}

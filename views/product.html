@@ -1,0 +1,35 @@
+<div class="productBox">
+	<div class="productPictures">
+		<div class="productPreview cycle-slideshow"
+			data-cycle-fx=fade
+			data-cycle-timeout=0
+			data-cycle-pager=".productPicturesSmall"
+			data-cycle-pager-template="<img src='{{src}}'>"
+		>
+			{loop="$product.pictures"}
+			<img src="{$value}">
+			{/loop}
+		</div>
+		<div class="productPicturesSmall">
+		</div>
+	</div>
+	<div class="productInfo">
+		<div class="productBrand">
+			<img src="{$product.brand}" alt="">
+			<p>Adidas</p>
+		</div>
+		<div class="productName">
+			<p>{$product.name}</p>
+		</div>
+		<div class="productSize">
+			<div class="sizeBox">
+				{loop="$product.sizes"}
+				<div class="box">{$value}</div>
+				{/loop}
+			</div>
+		</div>
+		<div class="productBtn">
+			<button>Comprar</button>
+		</div>
+	</div>
+</div>

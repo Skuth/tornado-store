@@ -1,0 +1,108 @@
+.content {
+	padding: 40px 0px;
+	.container {
+		width: 80%;
+		margin: 0 auto;
+		display: block;
+		text-align: justify;
+		a {
+			color: $primary-color;
+		}
+		.box {
+			width: calc(100% / 3 - 50px);
+			margin: 20px 50px;
+			display: inline-block;
+			margin-left: -4px;
+			background: $secundary-color;
+			border-radius: 4px;
+			overflow: hidden;
+			cursor: pointer;
+			box-shadow: 2px 4px 20px rgba(0,0,0,0.2);
+			&:hover {
+				.box-picture {
+					@include gradient(var(--tooltip-bgcolor1), var(--tooltip-bgcolor2));
+					img {
+						transform: scale(1.2) rotate(10deg) translateY(-20px);
+					}
+				}
+			}
+			.box-picture {
+				display: block;
+				@include select();
+				width: calc(100% - 20px * 2);
+				padding: 20px;
+				@include gradient(#ddd, #ddd);
+				position: relative;
+				overflow: hidden;
+				@include transition(all, 0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+				img {
+					width: 100%;
+					display: block;
+					@include filter(drop-shadow(0 0 20px rgba(0,0,0,0.3)));
+					@include transition(all, 0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+				}
+			}
+			.box-info {
+				padding: 10px;
+				width: calc(100% - 10px * 2);
+				.info-brand {
+					padding: 10px 0;
+					width: 60px;
+					margin: 0 auto;
+					@include select();
+					img {
+						display: block;
+						width: 100%;
+					}
+				}
+				.info-title {
+					padding: 10px;
+					width: calc(100% - 10px * 2);
+					h3 {
+						font-size: 18px;
+						text-align: center;
+						font-family: 'Inconsolata';
+					}
+				}
+				.info-price {
+					text-align: center;
+					display: block;
+					padding: 20px 0;
+					span, h4 {
+						font-size: 24px;
+						font-weight: bold;
+						display: inline-block;
+						font-family: 'Inconsolata';
+					}
+				}
+			}
+		}
+		.sm-btn {
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			padding: 20px 0;
+			button {
+				border: 0;
+				@include gradient($primary-color, $primary-color);
+				color: $secundary-color;
+				padding: 20px;
+				width: calc(90% - 20px * 2);
+				text-align: center;
+				font-size: 18px;
+				font-family: 'Inconsolata';
+				max-width: 350px;
+				border-radius: 4px;
+				box-shadow: 0 0 20px rgba(0,0,0,0.2);
+				font-weight: bold;
+				cursor: pointer;
+				outline: none;
+				@include transition(all, 0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+				&:hover {
+					@include gradient($primary-color, #555);
+					box-shadow: 2px 4px 20px rgba(0,0,0,0.4);
+				}
+			}
+		}
+	}
+}

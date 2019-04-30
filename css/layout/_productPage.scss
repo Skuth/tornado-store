@@ -1,0 +1,104 @@
+.productBox {
+    @include flex(center, center);
+    padding: 40px;
+    width: calc(90% - 40px * 2);
+    margin: 0 auto;
+    font-family: 'Inconsolata';
+    .productPictures {
+        width: 40%;
+        text-align: center;
+        padding: 20px 0;
+        @include select();
+        .productPreview {
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+            padding: 40px 0;
+            padding-top: 10px;
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+        .productPicturesSmall {
+            img {
+                width: 120px;
+                @include filter(drop-shadow(0 0 20px rgba(0,0,0,0.1)));
+                padding: 10px; 
+            }
+        }
+    }
+    .productInfo {
+        width: 60%;
+        .productBrand {
+            display: flex;
+            padding: 20px 40px;
+            width: calc(100% - 40px * 2);
+            cursor: default;
+            @include flex(flex-end, center);
+            img {
+                width: 60px;
+                @include select();
+                @include filter(invert(1));
+            }
+            p {
+                display: inline-block;
+                font-size: 40px;
+                color: $primary-color;
+                padding: 10px;
+                @include select();
+            }
+        }
+        .productName {
+            font-size: 25px;
+            padding: 20px 40px;
+            width: calc(100% - 40px * 2);
+            color: $primary-color;
+            text-align: right;
+            cursor: default;
+        }
+        .productSize {
+            .sizeBox {
+                display: block;
+                text-align: right;
+                padding: 20px 40px;
+                width: calc(100% - 40px * 2);
+                .box {
+                    display: inline-block;
+                    padding: 10px;
+                    border: 2px solid $primary-color;
+                    margin-left: calc(-8px - 2px);
+                    color: $primary-color;
+                    cursor: pointer;
+                    @include select();
+                    @include transition(all, 0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+                    &:hover {
+                        background: $primary-color;
+                        color: $secundary-color;
+                    }
+                    &:first-child {
+                        border-radius: 4px 0 0 4px;
+                    }
+                    &:last-child {
+                        border-radius: 0 4px 4px 0;
+                    }
+                }
+            }
+        }
+        .productBtn {
+            display: block;
+            text-align: right;
+            padding: 20px 40px;
+            width: calc(100% - 40px * 2);
+            button {
+                padding: 10px 20px;
+                background: $primary-color;
+                color: $white;
+                border-radius: 4px;
+                font-family: 'Inconsolata';
+                font-size: 22px;
+                cursor: pointer;
+            }
+        }
+    }
+}

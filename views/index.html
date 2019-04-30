@@ -1,0 +1,83 @@
+<div class="slide">
+
+	<div class="slide-show cycle-slideshow"
+	data-cycle-slides="> div"
+	data-cycle-timeout="4000"
+	data-cycle-prev="#prev"
+	data-cycle-next="#next"
+	data-cycle-pager=".slide-circle"
+	data-cycle-pager-template="<i class='far fa-circle'></i>"
+	>
+
+	{loop="$slide"}
+
+	<div class="slide-box" style="--tooltip-color1: {$value.color1}; --tooltip-color2: {$value.color2};">
+		<div class="slide-picture">
+			<img src="{$value.pictures.0}" style="transform: scaleX(-1);">
+		</div>
+		<div class="slide-info">
+			<div class="slide-brand">
+				<div class="brand-picture">
+					<img src="{$value.brand}">
+				</div>
+				<div class="sneaker-name">
+					<h2>{function="toBold($value.name)"}</h2>
+				</div>
+				<div class="brand-btn">
+					<button onclick="location.href='/produto/{$value.id}/{function="formatName($value.name)"}'">Ver mais</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{/loop}
+
+</div>
+
+<div class="slide-count">
+	<p class="last-item" id="prev"><i class="fas fa-chevron-up"></i></p>
+
+	<div class="slide-circle">
+
+	</div>
+
+	<p class="next-item" id="next"><i class="fas fa-chevron-down"></i></p>
+</div>
+
+</div>
+
+<div class="content">
+	<div class="container">
+
+		{loop="$box"}
+	
+		<a href="/produto/{$value.id}/{function="formatName($value.name)"}">
+		<div class="box" style="--tooltip-bgcolor1: {$value.color1}; --tooltip-bgcolor2: {$value.color2};">
+			<div class="box-picture">
+				<img src="{$value.pictures.0}">
+			</div>
+			<div class="box-info">
+				<div class="info-brand">
+					<img src="{$value.brand}" style="filter: invert(1);">
+				</div>
+				<div class="info-title">
+					<h3>{function="toBold($value.name)"}</h3>
+				</div>
+				<div class="info-price">
+					<span>R$</span>
+					<h4>{$value.price}</h4>
+				</div>
+			</div>
+		</div>
+		</a>
+
+		{/loop}
+
+		<div class="sm-btn">
+			<button>
+				<i class="fas fa-plus"></i>
+				Ver mais
+			</button>
+		</div>
+	</div>
+</div>
