@@ -12,8 +12,8 @@
 		</div>
 	</footer>
 
-	<script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/jquery.cycle2.min.js"></script>
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/jquery.cycle2.min.js"></script>
 
 	<script>
 		$(document).ready(function() {
